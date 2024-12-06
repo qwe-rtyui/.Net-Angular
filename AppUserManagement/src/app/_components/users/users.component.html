@@ -1,0 +1,199 @@
+<div class="container p-5" *ngIf="visibleForm">
+  <div class="row">
+    <div class="col-6" *ngIf="form">
+      <h6>{{ titleForm }}</h6>
+      <hr />
+      <form [formGroup]="form" (ngSubmit)="SendForm()">
+        <div class="form-group">
+          <label>Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            [class.is-invalid]="
+              form.get('name')?.errors && form.get('name')?.touched
+            "
+          />
+          <div
+            class="invalid-feedback"
+            *ngIf="form.get('name')?.hasError('required')"
+          >
+            O campo nome é obrigatório.
+          </div>
+          <div
+            class="invalid-feedback"
+            *ngIf="form.get('name')?.hasError('maxlength')"
+          >
+            O campo nome não pode ultrapassar de 255 caracteres.
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Sobrenome</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="surname"
+            [class.is-invalid]="
+              form.get('surname')?.errors && form.get('surname')?.touched
+            "
+          />
+          <div
+            class="invalid-feedback"
+            *ngIf="form.get('surname')?.hasError('required')"
+          >
+            O campo sobrenome é obrigatório.
+          </div>
+          <div
+            class="invalid-feedback"
+            *ngIf="form.get('surname')?.hasError('maxlength')"
+          >
+            O campo sobrenome não pode ultrapassar de 255 caracteres.
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="email"
+            [class.is-invalid]="
+              form.get('email')?.errors && form.get('email')?.touched
+            "
+          />
+          <div
+            class="invalid-feedback"
+            *ngIf="form.get('email')?.hasError('required')"
+          >
+            O campo email é obrigatório.
+          </div>
+          <div
+            class="invalid-feedback"
+            *ngIf="form.get('email')?.hasError('email')"
+          >
+            {{
+              "E-mail inválido. Insira um endereço válido no formato
+            exemplo@dominio.com."
+            }}
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Data de nascimento</label>
+          <input
+            type="date"
+            class="form-control"
+            formControlName="birthdate"
+            [class.is-invalid]="
+              form.get('birthdate')?.invalid && form.get('birthdate')?.touched
+            "
+          />
+          <div
+            class="invalid-feedback"
+            *ngIf="
+              form.get('birthdate')?.hasError('required') &&
+              form.get('birthdate')?.touched
+            "
+          >
+            O campo data é obrigatório.
+          </div>
+          <div
+            class="invalid-feedback"
+            *ngIf="
+              form.get('birthdate')?.hasError('invalidDate') &&
+              form.get('birthdate')?.touched
+            "
+          >
+            A data não pode ser no futuro.
+          </div>
+        </div>
+        <div>
+          <label>Educação</label>
+          <select
+            class="form-control"
+            formControlName="education"
+            [class.is-invalid]="
+              form.get('education')?.invalid && form.get('education')?.touched
+            "
+          >
+            <option [ngValue]="null" disabled>Escolha a escolaridade</option>
+            <option [ngValue]="0">Infantil</option>
+            <option [ngValue]="1">Fundamental</option>
+            <option [ngValue]="2">Médio</option>
+            <option [ngValue]="3">Superior</option>
+          </select>
+          <div
+            class="invalid-feedback"
+            *ngIf="
+              form.get('education')?.hasError('required') &&
+              form.get('education')?.touched
+            "
+          >
+            O campo Esucação é obrigatório.
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row F-right mt-3">
+            <div>
+              <button
+                type="button"
+                class="ml-1 animation btn btn-outline-secondary"
+                (click)="ViewFormAdd()"
+              >
+                Voltar
+              </button>
+              <button type="submit" class="animation btn btn-outline-success">
+                Salvar
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Lista de Pessoas -->
+<div *ngIf="visibleTable">
+  <div
+    class="d-flex justify-content-between align-items-center boder boder-light rounded pb-5"
+  >
+    <button
+      type="button"
+      class="animation border-r btn btn-outline-secondary"
+      (click)="ViewFormAdd()"
+    >
+      Nova Pessoa
+    </button>
+    <input
+      type="text"
+      class="w-25 border-r form-control"
+      [(ngModel)]="searchTerm"
+      placeholder="Buscar por nome ou escolaridade"
+    />
+  </div>
+  <div class="row" *ngIf="users">
+    <app-user-card
+      class="col-md-3 col-sm-12 col-12 mb-2"
+      *ngFor="let item of filteredUsers"
+      [user]="item"
+      (userInfoEmitter)="infoUserSelec($event)"
+    >
+    </app-user-card>
+  </div>
+</div>
+
+
+<!-- Modal Delete -->
+<app-user-delete-modal
+  [isVisible]="isModalVisible"
+  [userName]="userName"
+  (onClose)="DeleteModalClose($event)">
+</app-user-delete-modal>
+
+<!-- Modal Alert -->
+<app-alert
+  [type]="alertType"
+  [message]="alertMessage"
+  [autoDismiss]="true"
+></app-alert>
+

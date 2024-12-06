@@ -1,0 +1,133 @@
+# Compilação do Visual Studio
+ApiUserManagement/*.exe
+ApiUserManagement/*.dll
+ApiUserManagement/*.pdb
+ApiUserManagement/*.cache
+ApiUserManagement/*.ilk
+ApiUserManagement/*.log
+ApiUserManagement/*.lib
+ApiUserManagement/*.nupkg
+ApiUserManagement/*.obj
+ApiUserManagement/*.o
+ApiUserManagement/*.os
+ApiUserManagement/*.user
+ApiUserManagement/*.suo
+ApiUserManagement/*.pch
+ApiUserManagement/*.dbg
+ApiUserManagement/*.mdb
+
+# Diretórios gerados
+ApiUserManagement/bin/
+ApiUserManagement/obj/
+ApiUserManagement/publish/
+ApiUserManagement/out/
+
+# Logs e relatorios
+ApiUserManagement/*.log
+ApiUserManagement/*.tlog
+ApiUserManagement/*.trx
+ApiUserManagement/TestResults/
+ApiUserManagement/*.opencover.xml
+
+# Arquivos de configuração do sistema
+ApiUserManagement/.vscode/
+ApiUserManagement/.idea/
+ApiUserManagement/*.code-workspace
+
+# Configuração do usuário
+ApiUserManagement/*.rsuser
+ApiUserManagement/*.sln.docstates
+ApiUserManagement/*.userosscache
+ApiUserManagement/*.userprefs
+
+# Cache do NuGet
+ApiUserManagement/*.snupkg
+ApiUserManagement/*.nupkg
+ApiUserManagement/packages/
+
+# Arquivos temporários
+ApiUserManagement/*.tmp
+ApiUserManagement/*.temp
+ApiUserManagement/*.log
+ApiUserManagement/*.vs/
+
+# Configuração de Build
+ApiUserManagement/project.lock.json
+ApiUserManagement/project.fragment.lock.json
+ApiUserManagement/artifacts/
+
+# Configuração de Dependências
+ApiUserManagement/package-lock.json
+ApiUserManagement/packages.config
+
+# Arquivos de Deploy
+ApiUserManagement/*.deploy
+
+# Arquivos do Rider
+ApiUserManagement/.idea/
+ApiUserManagement/*.DotSettings.user
+
+# Arquivos gerados pelo sistema
+ApiUserManagement/Thumbs.db
+ApiUserManagement/Desktop.ini
+
+# Arquivos de banco de dados
+ApiUserManagement/*.mdf
+ApiUserManagement/*.ldf
+ApiUserManagement/*.ndf
+
+# Arquivos de migração de banco de dados
+ApiUserManagement/Migrations/
+
+# Arquivos de ambiente
+ApiUserManagement/.env
+ApiUserManagement/.env.*
+
+# Arquivos adicionais do Visual Studio
+ApiUserManagement/.vs/
+ApiUserManagement/.DS_Store
+
+
+#
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+AppUserManagement/dist
+AppUserManagement/tmp
+AppUserManagement/out-tsc
+AppUserManagement/bazel-out
+
+# Node
+AppUserManagement/node_modules
+AppUserManagement/npm-debug.log
+AppUserManagement/yarn-error.log
+
+# IDEs and editors
+AppUserManagement/.idea/
+AppUserManagement/.project
+AppUserManagement/.classpath
+AppUserManagement/.c9/
+AppUserManagement/*.launch
+AppUserManagement/.settings/
+AppUserManagement/*.sublime-workspace
+
+# Visual Studio Code
+AppUserManagement/.vscode/*
+AppUserManagement/!.vscode/settings.json
+AppUserManagement/!.vscode/tasks.json
+AppUserManagement/!.vscode/launch.json
+AppUserManagement/!.vscode/extensions.json
+AppUserManagement/.history/*
+
+# Miscellaneous
+AppUserManagement/.angular/cache
+AppUserManagement/.sass-cache/
+AppUserManagement/connect.lock
+AppUserManagement/coverage
+AppUserManagement/libpeerconnection.log
+AppUserManagementtestem.log
+AppUserManagement/typings
+
+# System files
+AppUserManagementAppUserManagement/.DS_Store
+AppUserManagementThumbs.db

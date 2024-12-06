@@ -1,0 +1,21 @@
+<div class="_modal-backdrop" *ngIf="isVisible"></div>
+<div class="_modal" [ngClass]="{ show: isVisible }" *ngIf="isVisible">
+  <div class="_modal-content">
+    <div class="_modal-header">
+      <h5>Confirmação de Exclusão</h5>
+      <button type="button" class="_close" (click)="close(false)">×</button>
+    </div>
+    <div class="_modal-body">
+      Tem certeza que deseja excluir o usuário <strong>{{ userName }}</strong
+      >?
+    </div>
+    <div class="_modal-footer">
+      <button class="animation btn btn-secondary" (click)="close(false)">
+        Não
+      </button>
+      <button class="animation btn btn-danger" (click)="close(true)">
+        Sim
+      </button>
+    </div>
+  </div>
+</div>

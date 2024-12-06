@@ -1,0 +1,18 @@
+.F-left {
+  float: right;
+  border-right-width: thick;
+}
+
+.ml-1 {
+  margin-right: 1rem !important;
+}
+
+.animation {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* A transição suave para o efeito */
+}
+
+.animation:hover {
+  z-index: 5;
+  transform: scale(1.1); /* Aumenta o tamanho do botão */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destacar o botão */
+}

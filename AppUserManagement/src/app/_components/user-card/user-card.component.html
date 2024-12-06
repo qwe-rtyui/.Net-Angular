@@ -1,0 +1,15 @@
+<div class="animation card">
+  <img [src]="imagePath" class="card-img-top" alt="User profile" />
+  <div class="card-header">
+    <h5 class="card-title">{{ user.name }} {{user.surname}}</h5>
+  </div>
+  <div class="card-body">
+    <!-- <h5 class="card-title">{{ user.name }} {{user.surname}}</h5> -->
+    <h6 class="card-subtitle mb-2">Escolaridade: <span class="text-body-secondary">{{educationLevel(user.education)}}</span></h6>
+    <h6 class="card-subtitle mb-2">Email: <span class="text-body-secondary">{{user.email}}</span></h6>
+    <h6 class="card-subtitle mb-2">Dt.Nascimento: <span class="text-body-secondary">{{date(user.birthdate)}}</span></h6>
+    <a class="animation F-left btn btn-outline-danger" (click)="callbackDelete(user.userId, user.name)">Excluir</a>
+    <a class="animation F-left ml-1 btn btn-outline-warning" (click)="callbackUpdate(user.userId, user.name)">Atualizar</a>
+  </div>
+</div>
+
