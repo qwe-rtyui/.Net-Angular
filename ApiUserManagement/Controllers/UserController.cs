@@ -37,9 +37,7 @@ namespace ApiUserManagement.Controllers
         {
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
-
             return Ok();
-            //return CreatedAtAction(nameof(GetUsersAsync), new { id = user.UserId }, user);
         }
 
         [HttpPut]
@@ -63,7 +61,6 @@ namespace ApiUserManagement.Controllers
             _context.Users.Remove(user);
             await _context.SaveChangesAsync();
             return Ok();
-            //return NoContent();
         }
 
     }

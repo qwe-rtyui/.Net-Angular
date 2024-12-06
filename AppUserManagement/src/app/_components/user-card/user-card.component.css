@@ -8,11 +8,11 @@
 }
 
 .animation {
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* A transição suave para o efeito */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .animation:hover {
   z-index: 5;
-  transform: scale(1.1); /* Aumenta o tamanho do botão */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destacar o botão */
+  transform: scale(1.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }

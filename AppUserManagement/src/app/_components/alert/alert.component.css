@@ -1,16 +1,16 @@
 .alert {
-  position: fixed;          /* Posiciona o alert de forma fixa na tela */
-  bottom: 20px;             /* Coloca o alert 20px acima do fundo */
-  left: 20px;               /* Coloca o alert 20px da esquerda */
-  width: 600px;             /* Defina a largura do alert (ajuste conforme necessário) */
-  z-index: 5;               /* Faz o alert aparecer sobre outros elementos */
-  margin: 0;                /* Remove qualquer margem que o alert possa ter */
-  padding: 15px;            /* Ajusta o padding para dar um espaço interno */
-  border-radius: 5px;       /* Borda arredondada */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar o alert */
-  transition: opacity 0.3s ease;  /* Transição suave para o desaparecimento */
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 600px;
+  z-index: 5;
+  margin: 0;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease;
 }
 
 .alert h4 {
-  margin-bottom: 10px;      /* Espaçamento entre o título e o conteúdo */
+  margin-bottom: 10px;
 }

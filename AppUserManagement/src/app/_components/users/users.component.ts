@@ -42,12 +42,14 @@ export class UsersComponent implements OnInit {
     this.loadUsers();
   }
 
+  //Lista os Usuários
   loadUsers(): void {
     this.userService.getUsers().subscribe(result => {
       this.users = result;
     }, error => console.error('Erro ao carregar usuários:', error));
   }
 
+    //Altera para o form de cadastro
   ViewFormAdd(): void {
     this.visibleTable = !this.visibleTable;
     this.visibleForm = !this.visibleForm;
@@ -63,6 +65,7 @@ export class UsersComponent implements OnInit {
     });
   }
 
+    //Valida o formulario
   SendForm(): void {
     if (this.form.invalid) {
       this.showAlerts('danger', 'Por favor, preencha todos os campos corretamente.')
@@ -91,6 +94,7 @@ export class UsersComponent implements OnInit {
     }
   }
 
+    //Carrega os dados do form com o usuário selecionado para atualizar
   UpdateUser(userId: number): void {
     this.ViewFormAdd();
     this.userService.getUserId(userId).subscribe(result => {
@@ -106,6 +110,7 @@ export class UsersComponent implements OnInit {
     });
   }
 
+    //Deleta user ou fecha o modal delete
   DeleteModalClose(confirmed: boolean): void {
     this.isModalVisible = false;
     if (confirmed) {
@@ -113,17 +118,19 @@ export class UsersComponent implements OnInit {
     }
   }
 
-  //Exibir o modal
+  //Exibir o modal delete
   DisplayModalDelete(userId: number, userName: string): void {
     this.isModalVisible = true;
     this.userId = userId;
     this.userName = userName;
   }
 
+  //Fecha o Modal
   CloseModal(): void {
     this.isModalVisible = false;
   }
 
+  //Deleta usuario selecionado
   DeleteUser(userId: number): void {
     this.userService.deleteUser(userId).subscribe((result) => {
       this.isModalVisible = false;
@@ -132,7 +139,7 @@ export class UsersComponent implements OnInit {
     });
   }
 
-
+  //Formata a data de nascimento Json
   dateNotInFuture(control: AbstractControl): { [key: string]: boolean } | null {
     const today = new Date();
     const birthdate = new Date(control.value);
@@ -143,11 +150,13 @@ export class UsersComponent implements OnInit {
     return null;
   }
 
+  //Formata a escolariada para apresentar na tela string do que number
   educationLevel(education: number): string {
     var result;
     return result = EducationLevel[education].toString();
   }
 
+  //Botoes do componente do UserCard
   infoUserSelec(event: UserActionEvent) {
     if (event.action === 'delete') {
       this.DisplayModalDelete(event.Id, event.Name);
@@ -156,6 +165,7 @@ export class UsersComponent implements OnInit {
     };
   }
 
+  //Filtra pelo Nome, Sobrenome e Educação
   get filteredUsers() {
     return this.users.filter(user => {
       const term = this.searchTerm.toLowerCase();
@@ -167,6 +177,7 @@ export class UsersComponent implements OnInit {
     });
   }
 
+  //Modal de alerts
   showAlerts(type: 'success' | 'warning' | 'danger', message: string) {
     this.alertType = type;
     this.alertMessage = message;

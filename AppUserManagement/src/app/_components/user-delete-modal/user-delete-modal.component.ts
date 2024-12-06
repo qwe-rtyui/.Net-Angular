@@ -10,10 +10,10 @@ import { CommonModule } from '@angular/common';
 })
 export class UserDeleteModalComponent {
   @Input() isVisible: boolean = false;
-  @Input() userName!: string; // Nome do usuário a ser exibido
-  @Output() onClose = new EventEmitter<boolean>(); // Emite se o usuário confirmou ou cancelou
+  @Input() userName!: string;
+  @Output() onClose = new EventEmitter<boolean>();
 
   close(confirmed: boolean): void {
-    this.onClose.emit(confirmed); // Envia true para confirmar ou false para cancelar
+    this.onClose.emit(confirmed);
   }
 }
