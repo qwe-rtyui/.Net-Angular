@@ -131,3 +131,4 @@ AppUserManagement/typings
 # System files
 AppUserManagementAppUserManagement/.DS_Store
 AppUserManagementThumbs.db
+AppUserManagement/package-lock.json
